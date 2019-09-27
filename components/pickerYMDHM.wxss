@@ -1,0 +1,29 @@
+/* components/pickerYMDHM/pickerYMDHM.wxss */
+.date {
+border:1rpx solid #ddd;
+border-radius:8rpx;
+width:100%;
+height:70rpx;
+position:relative;
+
+}
+.flex {
+display:flex;
+justify-content:space-between;
+align-items:center;
+}
+.dateimg {
+width:36rpx;
+position:absolute;
+right:20rpx;
+top:50%;
+transform:translateY(-50%);
+
+}
+.fleximg {
+display:flex;
+justify-content:center;
+align-items:center;
+
+}
+

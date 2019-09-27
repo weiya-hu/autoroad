@@ -1,0 +1,65 @@
+/**app.wxss**/
+view{
+  color: #333;
+  text-align: left;
+}
+image{
+  width: 100%;
+}
+.flex{
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+}
+.flexa{
+  display: flex;
+  justify-content: space-around;
+  align-items: center;
+}
+.fleximg{
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+.flexl{
+  display: flex;
+  justify-content: flex-start;
+  align-items: center;
+}
+.flexr{
+  display: flex;
+  justify-content: flex-end;
+  align-items: center;
+}
+.flexcb{
+  display: flex;
+  flex-direction: column;
+  justify-content: flex-start;
+  align-content: space-between;
+}
+.flexcc{
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+}
+.flexc{
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+.container{background: #f1f3f5;overflow-x: hidden;}
+::-webkit-scrollbar {
+  width: 0;
+  height: 0;
+  color: transparent;
+}
+.info{color: #666666;font-size: 24rpx;text-align: left;width: 100%;box-sizing: border-box;padding: 5rpx 20rpx;}
+@media screen and (max-width: 768px){
+  .container .infopre{position: absolute;top:950rpx;z-index: 999}
+  .container .infoprefx{position: absolute;top:880rpx;z-index: 999}
+}
+/* .infopre{position: absolute;top: 900rpx;z-index: 999} */
+@media screen and (min-width: 768px){
+  .container .infopre{position: absolute;top: 680rpx;z-index: 999}
+}

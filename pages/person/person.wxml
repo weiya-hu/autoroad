@@ -1,0 +1,34 @@
+<!--pages/person/person.wxml-->
+<view wx:if='{{projectlistshow && projectlist.length>0}}' class="container" style='height:{{height}}px'>
+  <scroll-view scroll-x="true" class="nav" scroll-left="{{navScrollLeft}}" scroll-with-animation="true">
+    <block wx:for="{{projectlist}}" wx:for-index="idx" wx:for-item="navItem" wx:key="idx">
+      <view class="address {{currentTab == idx ?'active':''}}"  data-current="{{idx}}" bindtap="switchNav">{{navItem.name}}({{navItem.personsize}}人)</view>
+    </block>        
+  </scroll-view>
+    <!-- 页面内容 -->       
+  <swiper class="tab-box" current="{{currentTab}}" duration="300" bindchange="switchTab">        
+    <swiper-item wx:for="{{projectlist}}" wx:for-item="tabItem" wx:for-index="idx" wx:key="idx" class="tab-content">
+      <view  wx:if='{{tabItem.users.length>0}}' class='tab'>
+        <view class='flex row'>
+          <view>姓名</view>
+          <view>职务</view>
+          <view>位置</view>
+          <!-- <view>进洞时间</view> -->
+        </view>
+        <scroll-view scroll-y style='height:950rpx'> 
+          <view wx:for='{{tabItem.users}}' wx:for-item="item" wx:for-index="idx" wx:key="idx" class="flex rowbro">
+            <view class='fleximg'><view class='rd'>{{item.realname}}</view></view>
+            <view class='fleximg'><view class='rd'>{{item.team}}</view></view>
+            <view class='fleximg'><view class='rd'>{{item.address}}</view></view>
+            <!-- <view class='fleximg'><view class='rd'>{{item.in_time}}</view></view> -->
+          </view>
+        </scroll-view>
+      </view>
+      <view  wx:else='{{tabItem.users.length>0}}' class='noperson'> --此场地暂无人员--</view>
+    </swiper-item>
+  </swiper>
+</view>
+<view class='nodataa flexcc' wx:if='{{!projectlistshow}}'>
+  <view class='nodataimg fleximg'><image mode='widthFix' src='../../images/nodata4.png'></image></view>
+  <view class='nodatatxt'>当前选择暂无数据</view>
+</view>

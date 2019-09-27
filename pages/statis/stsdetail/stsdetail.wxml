@@ -1,0 +1,22 @@
+<!--pages/statis/stsdetail/stsdetail.wxml-->
+<view>
+  <view class="nav">
+    <view wx:for='{{nav}}' class="navitem {{navactive==item.value?'navitemactive':''}}" bindtap="navcheck" data-val="{{item.value}}">{{item.name}}</view>
+  </view>
+  <view class='content' wx:if='{{isshow}}'>
+    <view wx:for='{{statisobj}}' wx:key='index' class="ringitem" wx:if='{{item.detail[0].data>0 || item.detail[1].data>0 }}'>
+      <view class="title" >{{item.title}}:</view>
+      <view  wx:if='{{imagePath[index]}}' class="fleximg canvasimg">
+        <image src="{{imagePath[index]}}" mode="widthFix" class="lucky-index-img"></image>
+      </view>
+      <canvas wx:else='{{imagePath[index]}}' canvas-id="{{canvasidarr[index]}}" disable-scroll="false" class="canvas " bindtouchstart="touchHandler" data-indx='{{index}}'>
+      </canvas>
+      <!-- 暂时先把查看详情隐藏掉，因为查看详情功能还没有完善 -->
+      <!-- <view class="direct"><picker  bindchange="todirect" data-type='{{item.title}}' data-idx='{{index}}' value="{{index}}" range="{{sensorname[index]}}" >查看详情</picker></view> -->
+    </view>
+  </view>
+  <view class='nodataa flexcc' wx:else='{{isshow}}'>
+    <view class='nodataimg fleximg'><image mode='widthFix' src='../../../images/nodata4.png'></image></view>
+    <view class='nodatatxt'>当前选择暂无数据</view>
+  </view>
+</view>

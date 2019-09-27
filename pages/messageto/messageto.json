@@ -1,0 +1,9 @@
+{
+  "backgroundTextStyle": "light",
+  "navigationBarBackgroundColor": "#008aff",
+  "navigationBarTitleText": "信息上报",
+  "navigationBarTextStyle": "white",
+  "usingComponents": {
+    "pickerYMDHM": "../../components/pickerYMDHM"
+  }
+}

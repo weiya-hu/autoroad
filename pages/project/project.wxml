@@ -1,0 +1,21 @@
+<!--pages/project/project.wxml-->
+<view  class="container" style='height:{{height}}px' wx:if='{{projectlistshow}}'>
+  <block wx:for='{{projectlist}}' wx:key='index' wx:for-item='project'  >
+    <view class='flex project {{activelist[index]?"showpre":""}}' bindtap='show' data-indx='{{index}}' >
+      <view>{{project.name}}</view>
+      <view class='next fleximg'><image mode='widthFix' src='../../images/xia.png'></image></view>
+    </view>
+    <view>
+      <view wx:for='{{project.children}}' wx:key='index' wx:for-item='item' class='flex projectson' catchtap='toprojectdet'
+        data-item='{{item}}' data-project='{{project.name}}'>
+        <view class=''>{{item.name}}</view>
+        <view class='next1 fleximg'><image mode='widthFix' src='../../images/next1.png'></image></view>
+      </view>
+    </view>
+  </block>
+</view>
+<view class='nodataa flexcc' wx:else='{{projectlistshow}}'>
+  <view class='nodataimg fleximg'><image mode='widthFix' src='../../images/nodev1.png'></image></view>
+  <view class='nodatatxt'>您所在项目暂无此模块</view>
+</view>
+

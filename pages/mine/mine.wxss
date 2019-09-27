@@ -1,0 +1,15 @@
+/* pages/mine/mine.wxss */
+.mineup{height: 350rpx;background: #ffffff;}
+.workerimg{width: 150rpx;border-radius:50%;overflow:hidden;background:#C5DEF6;height:150rpx;}
+.username{font-size: 30rpx;font-weight: bold;color: #008aff;margin-top: 30rpx;}
+.between{height: 4rpx;width: 100%;background: #008aff;}
+.gw{background: #ffffff;font-size: 30rpx;width: 100%;height: 80rpx;border-bottom: 1rpx solid #e1e3e5;
+  padding-right: 10rpx;box-sizing: border-box}
+.gwtxt{color: #444}
+.about{margin-top: 30rpx;}
+.gwimg,.bmimg,.aboutimg,.xgmmimg{width: 30rpx;margin:0 10rpx 0 40rpx;}
+.bmimg,.aboutimg{width: 34rpx;}
+.xgmmimg{width: 40rpx;}
+.nextimg{width: 32rpx;}
+.exit{background: #008aff;color: #ffffff;width:250rpx;margin-top: 150rpx;border-radius: 80rpx;
+  height: 80rpx;line-height: 80rpx;}

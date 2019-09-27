@@ -1,0 +1,32 @@
+<!--pages/statis/direct/direct.wxml-->
+<view class="contain">
+  <view class="nav fleximg">
+    <view class="flexl" bindtap="pulldown">
+      <view class="sensor">{{sensorname[sensoridx]}}</view>
+      <view class="pulldownimg {{pullcontentshow?'pulldownimgactive':''}}"><image src="../../../images/pulldown.png" mode="widthFix"></image></view>
+    </view>
+    <view class='pull' style="height:{{height}}px" wx:if='{{pullcontentshow}}'>
+      <view class="pullcontent">
+        <view wx:for='{{sensorname}}' wx:key='index' class="pullitem {{sensoridx==index?'pullitemactive':''}}" bindtap="selectsensor" data-sensorname="{{item}}" data-idex="{{index}}">{{item}}</view>
+      </view>
+    </view>
+  </view>
+  <view class="content">
+    <view class="now flexl">
+      <view class="nowtxt">当前：</view>
+      <view class="nowdemo {{datalist.now==='在线'?'online':''}}">{{datalist.now}}</view>
+    </view>
+    <view class="contdown">
+      <view wx:for='{{datalist.history}}' wx:key='index' class="downitem">
+        <view class="title">{{item.title}}：</view>
+        <view  wx:if='{{imagePath[index]}}' class="fleximg canvasimg">
+          <image src="{{imagePath[index]}}" mode="widthFix" class="lucky-index-img"></image>
+        </view>
+        <!-- <view wx:else='{{imagePath[index]}}' class="canvaspre">
+          <canvas canvas-id="{{canvasidarr[index]}}" disable-scroll="false" class="canvas"></canvas>
+        </view> -->
+        <canvas wx:else='{{imagePath[index]}}' class="canvaspre canvas" canvas-id="{{canvasidarr[index]}}" disable-scroll="false"></canvas>
+      </view>
+    </view>
+  </view>
+</view>

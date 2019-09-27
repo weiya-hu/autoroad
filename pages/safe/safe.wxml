@@ -1,0 +1,50 @@
+<!--pages/safe/safe.wxml-->
+<scroll-view scroll-y wx:if='{{projectlistshow && projectlist.length>0}}' class="container" style='height:{{height}}px'>
+  <scroll-view scroll-x="true" class="nav" scroll-left="{{navScrollLeft}}" scroll-with-animation="true">
+    <block wx:for="{{projectlist}}" wx:for-index="idx" wx:for-item="navItem" wx:key="idx">
+      <view class="address {{currentTab == idx ?'active':''}}"  data-current="{{idx}}" bindtap="switchNav">
+        <view>{{navItem.ssInfo[0].equipmentName}}({{navItem.ssInfo[0].unit}})</view>
+        <view>{{navItem.ssInfo[0].value}}</view>
+        <view>{{navItem.ssInfo[0].address}}</view>
+      </view>
+    </block>        
+  </scroll-view>
+    <!-- 页面内容 -->       
+  <swiper class="tab-box" current="{{currentTab}}" duration="300" bindchange="switchTab">        
+    <swiper-item wx:for="{{projectlist}}" wx:for-item="tabItem" wx:for-index="idx" wx:key="idx" class="tab-content">
+      <view wx:if='{{tabItem.ssInfo.length>0}}'>
+        <view class="section">
+          <view class="curtime {{datearr[idx]==item.value?'curtimeactive':''}}" wx:for='{{time}}' wx:key='index' bindtap='bindDateChange' data-idx='{{item.value}}'>{{item.name}}</view>
+
+        </view>
+        <view class="co">
+          <!-- <canvas wx:if='{{chartshow}}' canvas-id="{{idarr[idx]}}" disable-scroll="false" class="canvas" bindtouchstart="touchHandler" data-indx='{{idx}}'></canvas> -->
+          <view class="coson" wx:if='{{chartshow}}'>
+             <canvas canvas-id="{{idarr[idx]}}" disable-scroll="false" class="canvas" bindtouchstart="touchHandler" data-indx='{{idx}}'></canvas>
+                      
+          </view>
+          <view class='nodataa flexcc' wx:if='{{!chartshow}}'>
+            <view class='nodataimg fleximg'><image mode='widthFix' src='../../images/nodata4.png'></image></view>
+            <view class='nodatatxt'>当前选择暂无数据</view>
+          </view>       
+        </view>
+        
+      </view>
+      <view wx:else='{{tabItem.ssInfo.length>0}}' class='nodata'>--暂无数据--</view>
+    </swiper-item>
+  </swiper>
+  <view class='infopre' wx:if='{{chartshow}}'>
+  <!-- <view class='info'>当前所选：{{bigname}}-{{item.address}}-{{item.equipmentName}}</view> -->
+    <view class='info'>当前所选传感器最新值：{{item.value}}{{item.unit}}</view>
+    <view wx:if="{{datearr[idx]=='6'}}" class='info'>x轴：根据最近7天的日期为坐标</view>
+    <view wx:if="{{datearr[idx]=='1'}}" class='info'>x轴：根据一天0~23点的整点为坐标</view>
+    <view wx:if="{{datearr[idx]=='15'}}" class='info'>x轴：根据最近15天的日期为坐标</view>
+    <view wx:if="{{datearr[idx]=='30'}}" class='info'>x轴：根据最近30天的日期为坐标</view>
+    <view class='info'>y轴：根据所选类型的合理范围值为坐标</view>
+    <view class='info'>说明：线性图值对应的是x轴每个时间点的数据，若中间出现断点，说明该时间范围内服务器未收到该种类型的上报数据，通过线形图可以直观的看到该设备当天的曲线变化情况</view>
+  </view> 
+</scroll-view> 
+<view class='nodataa flexcc' wx:if='{{!projectlistshow}}'>
+  <view class='nodataimg fleximg'><image mode='widthFix' src='../../images/nodata4.png'></image></view>
+  <view class='nodatatxt'>当前选择暂无数据</view>
+</view> 

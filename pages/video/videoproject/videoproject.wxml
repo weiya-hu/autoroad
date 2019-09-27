@@ -1,0 +1,29 @@
+<!--pages/video/videoproject/videoproject.wxml-->
+<wxs module="tool" src="../../tool.wxs"></wxs>
+<view wx:if='{{projectlistshow && projectlist.length>0}}' class="container" style='height:{{height}}px'>
+  <scroll-view scroll-x="true" class="nav" scroll-left="{{navScrollLeft}}" scroll-with-animation="true">
+    <block wx:for="{{projectlist}}" wx:for-index="idx" wx:for-item="navItem" wx:key="idx">
+      <view class="address {{currentTab == idx ?'active':''}}"  data-current="{{idx}}" bindtap="switchNav">{{navItem.name}}</view>
+    </block>        
+  </scroll-view>
+    <!-- 页面内容 -->
+  <swiper class="tab-box" current="{{currentTab}}" duration="300" bindchange="switchTab">        
+    <swiper-item wx:for="{{projectlist}}" wx:for-item="tabItem" wx:for-index="idx" wx:key="idx" class="tab-content">
+      <view wx:for='{{tabItem.children}}' wx:for-item="item" wx:for-index="idx" wx:key="idx" class="videoitem flexcc"
+        bindtap='tovideoplay' data-item='{{item}}' data-pre='{{tabItem.children}}' data-idx='{{idx}}'>
+        <view class='fleximg namepre'><view class="{{item.state=='在线'?'name':'namegray'}}">{{item.videoName}}</view></view>
+        <view class='videoimg fleximg'>
+          <image src='{{tool.imgurl(item.image)}}' mode='widthFix'></image>
+          <view class='opacity'></view>
+          <view class='fleximg playimg'>
+            <image src='../../../images/play.png' mode='widthFix'></image>
+          </view>
+        </view>
+      </view>
+    </swiper-item>
+  </swiper>
+</view>
+<view class='nodataa flexcc' wx:if='{{ !projectlistshow}}'>
+  <view class='nodataimg fleximg'><image mode='widthFix' src='../../../images/nodata4.png'></image></view>
+  <view class='nodatatxt'>当前选择暂无数据</view>
+</view> 

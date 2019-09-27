@@ -1,0 +1,15 @@
+<!--pages/about/about.wxml-->
+<view>
+  <view class='gw flexl'>
+    <view class='fleximg jszcimg'>
+      <image mode='widthFix' src='../../images/jszc.png'></image>
+    </view>
+    <view class='gwtxt'>技术支持：重庆开谨科技有限公司</view>
+  </view>
+  <view class='gw flexl' bindtap='call'>
+    <view class='fleximg gwimg'>
+      <image mode='widthFix' src='../../images/phone.png'></image>
+    </view>
+    <view class='gwtxt'>电话：023-62497813</view>
+  </view>
+</view>

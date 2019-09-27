@@ -1,0 +1,6 @@
+/* pages/about/about.wxss */
+.gw{background: #ffffff;font-size: 30rpx;width: 100%;height: 80rpx;border-bottom: 1rpx solid #e1e3e5;
+  padding-right: 10rpx;box-sizing: border-box}
+.gwtxt{color: #444}
+.gwimg,.jszcimg{width: 30rpx;margin:0 10rpx 0 40rpx;}
+.jszcimg{width: 36rpx;}

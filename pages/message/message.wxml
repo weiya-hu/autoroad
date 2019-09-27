@@ -1,0 +1,45 @@
+<!--pages/message/message.wxml-->
+<view class="container" style='height:{{height}}px'>
+  <view wx:for='{{messagelist}}' wx:key='index' class='items'>
+    <slide-cell right="{{right}}" bind:refresh="refresh" class="my-slide" data-id="{{item.id}}" >
+      <view slot='left' class='flex messageitem my-list' bindtap='tomessagedet' data-item='{{item}}' >
+        <view class='flexl messagetxtpre'>
+          <view class='wd fleximg'>
+            <view wx:if='{{item.readFlag==0}}'></view>
+          </view>
+          <view class='messagemst'>
+            <view class='messagetxt'>{{item.titile}}</view>
+            <view class='flex messagexx'>
+              <view>发布人：{{item.sender}}</view>
+              <view class='time'>{{item.sendTime}}</view>
+            </view>
+          </view>
+        </view>
+        <view wx:if='{{item.msgCategory==3}}' class='messagetype'>
+          <image class='messagetypeimg fleximg' mode='widthFix' src='../../images/blue.png'></image>
+          <view class='messagetypetxt'>信息上报</view>
+        </view>
+        <view wx:if='{{item.msgCategory==1}}' class='messagetype'>
+          <image class='messagetypeimg fleximg' mode='widthFix' src='../../images/pink.png'></image>
+          <view class='messagetypetxt'>通知公告</view>
+        </view>
+        <view wx:if='{{item.msgCategory==2}}' class='messagetype'>
+          <image class='messagetypeimg fleximg' mode='widthFix' src='../../images/orange.png'></image>
+          <view class='messagetypetxt'>系统消息</view>
+        </view>
+      </view>
+    </slide-cell>
+  </view>
+  
+  <view class='nodata' wx:if='{{messagelist.length>10 && nodata}}'>--到底了--</view>
+  <!-- <view class='float'>
+    <view class='alld flexcc'>
+      <view>全部</view>
+      <view>已读</view>
+    </view>
+    <view class='backtop flexcc' bindtap='totop'>
+      <view>回到</view>
+      <view>顶部</view>
+    </view>
+  </view> -->
+</view>

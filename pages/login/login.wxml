@@ -1,0 +1,34 @@
+<!--pages/login/login.wxml-->
+<view>
+  <view class='fleximg user'>
+    <view class='fleximg userimg'>
+      <image mode='widthFix' src='../../images/user.png'></image>
+    </view>
+  </view>
+  <form bindsubmit="formSubmit">
+    <view class='flex username'>
+      <label class='fleximg usernameimg' for='username'>
+        <image src='../../images/username.png' mode='widthFix'></image>
+      </label>
+      <input id='username' bindinput='userinput' name="username" class='usernameinp' type='text' placeholder='账号'     placeholder-class='placeclass' maxlength='18' confirm-type='next' value='{{username}}' focus='{{usernamefocus}}' bindfocus='usernamefocus' bindblur='usernameblur' bindconfirm	='next'></input>
+      <view  class='fleximg chaimg' bindtap='deletee' data-val='username'>
+        <image src='../../images/cha.png' mode='widthFix'></image>
+      </view>
+    </view>
+    <view class='flex password'>
+      <view class='fleximg usernameimg'>
+        <image src='../../images/password.png' mode='widthFix'></image>
+      </view>
+      <input name='password' class='passwordinp' type='password' placeholder='密码' placeholder-class='placeclass' maxlength='18' confirm-type='完成'  value='{{password}}' focus='{{passwordfocus}}'></input>
+      <view class='fleximg chaimg' bindtap='deletee' data-val='password'>
+        <image src='../../images/cha.png' mode='widthFix'></image>
+      </view>
+    </view>
+    <button loading='{{loading}}' hover-class='none' form-type='submit'>登录</button>
+  </form>
+  <view class='forget' bindtap='toforget'>忘记密码?</view>
+  <view class='foot'>
+    <view>技术支持：重庆开谨科技有限公司</view>
+    <view>当前版本 v1.0.0</view>
+  </view>
+</view>

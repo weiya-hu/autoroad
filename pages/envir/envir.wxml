@@ -1,0 +1,58 @@
+<!--pages/envir/envir.wxml-->
+<scroll-view  scroll-y wx:if='{{projectlistshow && projectlist.length>0}}' class="container" style='height:{{height}}px'>
+  <scroll-view scroll-x="true" class="nav" scroll-left="{{navScrollLeft}}" scroll-with-animation="true">
+    <block wx:for="{{projectlist}}" wx:for-index="idx" wx:for-item="navItem" wx:key="idx">
+      <view class="address {{currentTab == idx ?'active':''}}"  data-current="{{idx}}" bindtap="switchNav">{{navItem.name}}</view>
+    </block>        
+  </scroll-view>
+    <!-- 页面内容 -->       
+  <swiper class="tab-box" current="{{currentTab}}" duration="300" bindchange="switchTab">        
+    <swiper-item wx:for="{{projectlist}}" wx:for-item="tabItem" wx:for-index="idx" wx:key="idx" class="tab-content">
+      <view wx:if='{{tabItem.values.length>0}}'>
+        <scroll-view scroll-x="true" class="nav1" scroll-left="{{navScrollLeftarr1[idx]}}" scroll-with-animation="true">
+          <block wx:for="{{tabItem.values}}" wx:for-index="idex" wx:for-item="item" wx:key="idex">
+            <view class="address1 {{indexarr[idx] === idex ?'active1':''}}" data-current="{{idex}}" bindtap="switchNav1" data-idx='{{idx}}' data-item='{{item}}'>
+              <view class='typename'>{{item.typeName}}({{item.unit}})</view>
+              <view class='value'>{{item.value}}</view>
+              <view class='addressname'>{{item.equipmentName}}</view>
+            </view>
+          </block>        
+        </scroll-view>
+        <view class="section">
+          <picker mode="date" value="{{date}}" start="2019-05-16" end="{{today}}" bindchange="bindDateChange" class='flex'>
+            <view class='curtime'>当前选择：{{date}}</view>
+            <!-- <view class="picker">选择时间</view> -->
+          </picker>
+        </view>
+        <view class="co">
+          <view class="coson" wx:if='{{chartshow}}'>
+             <canvas  canvas-id="{{idarr[idx]}}" disable-scroll="false" class="canvas {{canvasopacity?'':'canvasyc'}}" bindtouchstart="touchHandler" data-indx='{{idx}}'></canvas>
+            
+             
+          </view>
+         
+          <!-- <canvas wx:if='{{true}}' canvas-id="{{idarr[idx]}}" disable-scroll="false" class="canvas" bindtouchstart="touchHandler" data-indx='{{idx}}'></canvas> -->
+          <!-- <view class='nodataa flexcc' wx:if='{{false}}'> -->
+          <view class='nodataa flexcc' wx:if='{{!chartshow}}'>
+
+            <view class='nodataimg fleximg'><image mode='widthFix' src='../../images/nodata4.png'></image></view>
+            <view class='nodatatxt'>当前选择暂无数据</view>
+          </view>       
+        </view>
+      </view>
+      <view wx:else='{{tabItem.values.length>0}}' class='nodata'>--暂无数据--</view>
+    </swiper-item>
+  </swiper>
+  <view class="infopre {{item.typeName=='风向'?'infoprefx':''}} {{canvasopacity?'':'canvasyc'}}" wx:if='{{chartshow}}'>
+    <!-- <view class='info'>当前所选：{{bigname}}-{{item.address}}-{{item.equipmentName}}</view> -->
+    <view class='info flexl'>当前所选传感器最新值：{{item.value}}<view wx:if="{{item.unit!='无'}}">{{item.unit}}</view></view>
+    <view class='info' wx:if="{{item.typeName=='风向'}}">风向值：1=东风，2=东北风，3=东南风，4=南风，5=西风，6=西南风，7=西北风，8=北风</view>
+    <view class='info'>x轴：根据一天0~23点的整点为坐标</view>
+    <view class='info'>y轴：根据所选类型的合理范围值为坐标</view>
+    <view class='info'>说明：线性图值对应的是x轴每个时间点的数据，若中间出现断点，说明该时间范围内服务器未收到该种类型的上报数据，通过线形图可以直观的看到该设备当天的曲线变化情况</view>
+  </view>
+</scroll-view> 
+<view class='nodataa flexcc' wx:if='{{!projectlistshow}}'>
+  <view class='nodataimg fleximg'><image mode='widthFix' src='../../images/nodata4.png'></image></view>
+  <view class='nodatatxt'>当前选择暂无数据</view>
+</view> 

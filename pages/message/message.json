@@ -1,0 +1,12 @@
+{
+  "backgroundTextStyle": "light",
+  "navigationBarBackgroundColor": "#008aff",
+  "navigationBarTitleText": "消息通知",
+  "navigationBarTextStyle": "white",
+  "enablePullDownRefresh": true,
+  "onReachBottomDistance": 60,
+  "usingComponents": {
+    "slide-cell": "../../components/slide-cell/slide-cell"
+  }
+
+}

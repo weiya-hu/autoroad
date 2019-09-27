@@ -1,0 +1,7 @@
+<!--pages/statis/statis.wxml-->
+<view>
+  <view class='flexl tunnelitem' wx:for='{{statislist}}' wx:key='index' bindtap='tostsdetail' data-id='{{item.id}}'  data-sdname='{{item.name}}'>
+    <view class='fleximg tunnelimg'><image mode='widthFix' src='../../images/tunnel.png'></image></view>
+    <view class='tunneltxt'>{{item.name}}</view>
+  </view>
+</view>

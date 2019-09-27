@@ -1,0 +1,14 @@
+/* pages/forget/forget.wxss */
+.username,.yzm{background: #ffffff;width: 100%;height: 100rpx;border-bottom: 1rpx solid #e1e3e5;}
+.username view{color: #333;font-size: 30rpx;padding: 0 25rpx;}
+.placeclass{font-size: 30rpx;}
+.yzm button{color: #008aff;width: 200rpx;height: 70rpx;border-radius: 8rpx;font-size: 28rpx;line-height: 70rpx;margin-left: 0;
+  margin-right: 25rpx;padding: 0;}
+.yzm input{padding-left: 25rpx;}
+.newkey{width: 100%;height: 100rpx;padding-left: 25rpx;background: #ffffff;width: 100%;position: relative;box-sizing: border-box;}
+.sure{background: #008aff;color: #ffffff;width: 90%;margin-top: 200rpx;border-radius: 100rpx;letter-spacing: 4rpx;}
+.yzm .yzmswitch{color: #666}
+.passwordtip{color: red;padding-left: 20rpx;font-size: 24rpx;}
+/* .passwordtips{position: absolute;top: 110rpx;left: 0;} */
+.newkey1{border-bottom: 1rpx solid #e1e3e5;}
+input{color:#666;font-size: 30rpx;}

@@ -1,0 +1,85 @@
+<!--pages/messageto/messageto.wxml-->
+<wxs module="tool" src="../tool.wxs"></wxs>
+<view class='co'>
+  <form bindsubmit="formSubmit" bindreset="formReset">
+    <view class='flexl title'>
+      <label class='titlelab flexr' for='title'><view class='xinxin'>*</view>标题：</label>
+      <input id='title' bindinput='userinput' name="title" class='titleinp' type='text' placeholder='请输入标题'     placeholder-class='placeclass' confirm-type='next' focus='{{usernamefocus}}' bindfocus='usernamefocus' bindblur='usernameblur' bindconfirm	='next' value='{{titlevalue}}'></input>
+    </view>
+    <view class='flexl title'>
+      <label class='titlelab flexr' for='type'><view class='xinxin'>*</view>消息类型：</label>
+      <picker mode="selector" range="{{type}}" bindchange="bindtypeChange" class='typepicker' name='type'>
+        <view class='typevalue'>{{typevalue}}</view>
+        <view class="xiaimg"><image mode='widthFix' src='../../images/xia.png'></image></view>
+      </picker>
+    </view>
+    <view wx:if="{{typevalue=='通知公告'}}">
+      <view class='flexl title'>
+        <label class='titlelab' for='content'>开始时间：</label>
+        <pickerYMDHM placeholder = "{{placeholderstart}}" date = "{{startdate}}" disabled = "{{disabled}}" bind:onPickerChange="onPickerChangestart" startDate="{{startDate}}" endDate="{{endDate}}" style='width:50%'>
+        </pickerYMDHM>
+        <view class='datetip' wx:if='{{datetipstart}}'>开始时间必须小于结束时间</view>
+      </view>
+      <view class='flexl title'>
+        <label class='titlelab' for='content'>结束时间：</label>
+        <pickerYMDHM placeholder = "{{placeholderend}}" date = "{{enddate}}" disabled = "{{disabled}}" bind:onPickerChange="onPickerChangeend" startDate="{{startDate}}" endDate="{{endDate}}" style='width:50%'>
+        </pickerYMDHM>
+        <view class='datetip' wx:if='{{datetipend}}'>结束时间必须大于开始时间</view>
+      </view>
+    </view>
+    <view class="flexl title {{tempFilePathss.length>3?'title1':''}}" >
+      <label class='titlelab' for='content'>上传图片：</label>
+      <view class='imgflx'>
+        <view wx:for='{{tempFilePathss}}' wx:key='index'>
+          <view class="uploadimg fleximg {{tempFilePathss.length>3?'addimgg':''}}" bindtap='previewimg' data-item='{{item}}' data-indx='{{index}}'>
+            <image mode='aspectFit' src='{{item}}' bindload="imageLoad" data-idx='{{index}}' 
+            class="{{imgstyle[index]?'width':'height'}} "></image>
+            <view class='ca fleximg' catchtap='deletee' data-item='{{item}}'><image mode='widthFix' src='../../images/ca.png'></image></view>
+          </view>
+        </view>
+        <view wx:if="{{count>0}}" class="fleximg addimg1 {{tempFilePathss.length>=3?'addimgg':''}}" bindtap='addimg'>
+          <image mode='widthFix' src='../../images/addimg2.png'></image>
+        </view>
+      </view>
+    </view>
+    <view class='flexl title' wx:if="{{!selectusershow}}">
+      <label class='titlelab flexr' for='content'><view class='xinxin'>*</view>内容：</label>
+      <textarea name='content' id='content' bindinput='contentinp' class='contentinp' type='text' placeholder='请输入内容'  placeholder-class='placeclass' confirm-type='next' focus='{{usernamefocus}}' bindfocus='usernamefocus' bindblur='usernameblur' bindconfirm	='next' value="{{contentvalue}}" ></textarea>
+    </view>
+    
+    <view class='flexl title'>
+      <label class='titlelab flexr' for='type'><view class='xinxin'>*</view>通告对象：</label>
+      <picker name='target' mode="selector" range="{{target}}" bindchange="bindtargetChange" class='typepicker'>
+        <view class='typevalue'>{{targetvalue}}</view>
+        <view class="xiaimg"><image mode='widthFix' src='../../images/xia.png'></image></view>
+      </picker>
+    </view>
+    <view class='flexl title' wx:if="{{targetvalue=='指定用户'}}">
+      <label class='titlelab' for='type'>选择用户：</label>
+      <view class='typepicker' catchtap='selectusershow'>
+        <view class='typevalue typevalue1'>{{targetuservalue}}</view>
+        <view class="xiaimg"><image mode='widthFix' src='../../images/xia.png'></image></view>
+      </view>
+      <view class='selectuserpre' wx:if="{{selectusershow}}" catchtap='checkshow'>
+      <checkbox-group  bindchange="checkboxChange" class='selectuser' catchtap='selectusershow'>
+        <view class='selectsure flex'>
+          <view catchtap='checkshow'>取消</view>
+          <view catchtap='selectusershow' data-sure='sure'>确定</view>
+        </view>
+        <scroll-view scroll-y class='scroll' bindscrolltolower='loadmore'>
+          <label class="checkbox " wx:for="{{checkitems}}" wx:key='index'>
+            <checkbox value="{{item.id}},{{item.realname}}" checked='{{checkedarr[index]}}'/>
+            <view>{{item.realname}}</view>
+          </label>
+          <view class='tofoot' wx:if="{{jumploadmore}}">--没有更多了--</view>
+        </scroll-view>
+        
+      </checkbox-group></view>
+      
+    </view>
+    <view class='btn'>
+      <button loading='{{loading}}' hover-class='none' form-type='reset' >取消</button>
+      <button loading='{{loading}}' hover-class='none' form-type='submit'>上报</button>
+    </view>
+  </form>
+</view>

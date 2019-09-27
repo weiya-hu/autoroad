@@ -1,0 +1,25 @@
+<!--pages/video/videoplay/videoplay.wxml-->
+<wxs module="tool" src="../../tool.wxs"></wxs>
+<view class='con'>
+  <video id="myVideo" class='vd' src='{{video}}' autoplay="{{true}}" bindwaiting='bindwaitvideo' binderror='binderrorvido'></video>
+  <scroll-view scroll-y style='height:{{heightdown}}px'>
+    <view class='title flexl'><view>{{name}}</view></view>
+    <view class='rele'>相关视频</view>
+    <!-- <view>{{txt}}</view> -->
+    <block wx:for="{{relalist}}" wx:key="{{index}}">
+      <view class='releitem' bindtap='change' data-item='{{item}}' data-num='{{index}}'>
+        <view class='itemleft fleximg'>
+          <image src='{{tool.imgurl(item.image)}}' mode='widthFix'></image>
+          <!-- <view>{{tool.toTime(item.duration)}}</view> -->
+        </view>
+        <view class='itemright'>
+          <view class='itemtitle {{num==index?"color":""}}'>{{item.videoName}}</view>
+          <!-- <view class='playNum'>{{item.browseNum}}次播放</view> -->
+        </view>
+      </view>
+    </block> 
+  </scroll-view>
+
+</view>
+
+

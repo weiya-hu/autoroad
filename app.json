@@ -1,0 +1,60 @@
+{
+  "pages": [
+    "pages/login/login",
+    "pages/index/index",
+    "pages/mine/mine",
+    "pages/message/message",
+    "pages/person/person",
+    "pages/safe/safe",
+    "pages/gas/gas",
+    "pages/envir/envir",
+    "pages/messageto/messageto",
+    "pages/forget/forget",
+    "pages/about/about",
+    "pages/video/videoproject/videoproject",
+    "pages/video/videoplay/videoplay",
+    "pages/message/messagedet/messagedet",
+    "pages/project/project",
+    "pages/statis/stsdetail/stsdetail",
+    "pages/statis/direct/direct",
+    "pages/statis/statis"
+  ],
+  "window": {
+    "backgroundTextStyle": "light",
+    "navigationBarBackgroundColor": "#008aff",
+    "navigationBarTitleText": "智慧云工程",
+    "navigationBarTextStyle": "white"
+  },
+  "tabBar": {
+    "backgroundColor": "#fff",
+    "color": "#7b7b7b",
+    "borderStyle": "black",
+    "selectedColor": "#008aff",
+    "list": [
+      {
+        "pagePath": "pages/message/message",
+        "text": "消息",
+        "iconPath": "images/message.png",
+        "selectedIconPath": "images/message_active.png"
+      },
+      {
+        "pagePath": "pages/index/index",
+        "text": "首页",
+        "iconPath": "images/index.png",
+        "selectedIconPath": "images/index_active2.png"
+      },
+      {
+        "pagePath": "pages/mine/mine",
+        "text": "个人中心",
+        "iconPath": "images/mine.png",
+        "selectedIconPath": "images/mine_active.png"
+      }
+    ]
+  },
+  "networkTimeout": {
+    "request": 1000000,
+    "downloadFile": 10000
+  },
+  "debug": true,
+  "sitemapLocation": "sitemap.json"
+}

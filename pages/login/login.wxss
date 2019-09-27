@@ -1,0 +1,16 @@
+/* pages/login/login.wxss */
+.userimg{width: 200rpx;}
+.user{width: 100%;height: 400rpx;}
+.usernameinp,.passwordinp{width: 96%;height:80rpx;background: #eee;color: #666;font-size: 30rpx;padding: 0 10rpx;
+  box-sizing: border-box;}
+.username,.password{width: 70%;height:80rpx;background: #eee;margin: 0 auto;padding: 0 20rpx;border-radius: 6rpx;
+margin-top: 30rpx;box-sizing: border-box;}
+.password{margin-top: 30rpx;}
+.usernameimg{width: 38rpx;}
+.chaimg{width:30rpx;}
+.placeclass{font-size: 30rpx;}
+button{width: 70%;height: 84rpx;margin-top: 60rpx;background: #008aff;border: none;
+  line-height: 84rpx;color: #ffffff;letter-spacing: 4rpx;}
+.forget{font-size: 24rpx;color: #666;margin-top: 30rpx;text-align: center}
+.foot{font-size: 26rpx;position: fixed;bottom: 40rpx;left: 0;width: 100%;text-align: center;}
+.foot view{color: #008aff;text-align: center;}

@@ -1,0 +1,16 @@
+<!--logs.wxml-->
+<view class="container">
+  <view class="list" style="{{style}}">
+ 
+    <view class="left" bindtouchstart='start' bindtouchmove='move' bindtouchend='end' bindtap='tap'>
+        
+		<slot name="left"></slot>
+    </view>
+    <view class="right"   style="width:{{rightWid}}px;">
+		<view wx:for="{{right}}" wx:key="{{index}}" style="color:{{item.color}};background:{{item.background}};width:{{item.width}}px;" data-index="{{index}}" bindtap='clickTab'>
+		<text>{{item.text}}</text>
+		</view>
+	</view>
+  </view>
+ 
+</view>

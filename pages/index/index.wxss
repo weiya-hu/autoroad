@@ -1,0 +1,30 @@
+/**index.wxss**/
+.up{position: relative}
+.tz{height: 50rpx;background: #ffffff;padding: 0 20rpx;background: rgba(0, 0, 0,0.2);
+  position: absolute;top: 0;left: 0;width: 100%;box-sizing: border-box;}
+.tzimgyellow{width: 36rpx;margin-right: 10rpx;}
+.tzimgblue{width: 42rpx;margin-right: 10rpx;}
+.tzimgpink{width: 42rpx;margin-right: 10rpx;}
+.tztxt{width: 100%; font-size: 24rpx;overflow: hidden;text-overflow:ellipsis;white-space: nowrap;color: #ffffff;}
+.upimg{width: 100%}
+.worker{position: absolute;top: 40%;left: 50%;transform: translateX(-50%);z-index: 4}
+.workerimg{width: 110rpx;}
+.workerrealimg{width: 100%}
+.workerbackg{width: 150rpx;height: 150rpx;border-radius: 50%;  background: #C5DEF6;overflow:hidden;}
+.workertxt{font-size: 24rpx;color: #ffffff;font-weight: bold;margin-top: 10rpx;}
+.video{border: 0.5rpx solid #f1f3f5;flex: 1;height: 250rpx;background: #ffffff;
+  box-sizing: border-box;}
+.videoimg{background: #FCE269;width: 100rpx;height: 100rpx;border-radius: 50%}
+.manimg{background:#72CBFE }
+.safeimg{background: #C2A3FF}
+.gasimg{background: #E24F51}
+.envirimg{background: #7FC8F1}
+.messagetoimg{background: #FFC875}
+.tjiimg{background: #88C5FF}
+.video image{width: 80%}
+.envirimg image{width: 64%}
+.messagetoimg image{width: 64%}
+.tjiimg image{width: 64%}
+.videotxt{color: #666666;font-size: 24rpx;margin-top: 14rpx;}
+.tji{width: 33.3%}
+

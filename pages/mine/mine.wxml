@@ -1,0 +1,57 @@
+<!--pages/mine/mine.wxml-->
+<view class="container" style='height:{{height}}px'>
+  <view class='flexcc mineup'>
+    <view class='fleximg workerimg' wx:if="{{userimg}}">
+      <image mode='widthFix' src='{{userimg}}'></image>
+    </view>
+    <view class='fleximg workerimg' wx:else="{{userimg}}">
+      <image mode='widthFix' src='../../images/user.png' bindload='userimgload'></image>
+    </view>
+    <view class='username'>{{userinfo.realname}}</view>
+  </view>
+  <view class='between'></view>
+  <view>
+    <view class='gw flexl'>
+      <view class='fleximg gwimg'>
+        <image mode='widthFix' src='../../images/gw.png'></image>
+      </view>
+      <view class='gwtxt flexl'>
+        <view>职位：</view>
+        <view>{{roles}}</view>  
+      </view>
+    </view>
+    <view class='gw flexl'>
+      <view class='fleximg bmimg'>
+        <image mode='widthFix' src='../../images/bm.png'></image>
+      </view>
+    <view class='gwtxt flexl'>
+      <view>部门：</view>
+      <view>{{departs}}</view> 
+    </view>
+    </view>
+    <view class='gw flex about'  bindtap='toabout'>
+      <view class='flexl'>
+        <view class='fleximg aboutimg'>
+          <image mode='widthFix' src='../../images/about.png'></image>
+        </view>
+        <view class='gwtxt'>关于我们</view>
+      </view>
+      <view class='fleximg nextimg'>
+          <image mode='widthFix' src='../../images/next.png'></image>
+        </view>
+    </view>
+    <view class='gw flex' bindtap='toforget'>
+      <view class='flexl'>
+        <view class='fleximg xgmmimg'>
+          <image mode='widthFix' src='../../images/xgmm.png'></image>
+        </view>
+        <view class='gwtxt'>修改密码</view>
+      </view>
+      <view class='fleximg nextimg'>
+          <image mode='widthFix' src='../../images/next.png'></image>
+        </view>
+    </view>
+    
+  </view>
+  <button bindtap='tologin' class='exit' hover-class='none'>退出登录</button>
+</view>

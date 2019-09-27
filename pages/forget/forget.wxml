@@ -1,0 +1,29 @@
+<!--pages/forget/forget.wxml-->
+<view class='container'  style='height:{{height}}px'>
+  <form bindsubmit='forgetsubmit'>
+    <view class='username flexl'>
+      <view>账号</view>
+      <input name='username' placeholder='请填写您的账号' placeholder-class='placeclass' maxlength='18' bindinput='usernametap'></input>
+    </view> 
+    <view class='username flexl'>
+      <view>+86</view>
+      <input name='phone' type='number' placeholder='请填写您的手机号' placeholder-class='placeclass' maxlength='11' bindinput='phonetap'></input>
+    </view>
+    <view class='yzm flex'>
+      <input name='yzm' placeholder='请输入收到的短信验证码' placeholder-class='placeclass'></input>
+      <button catchtap='getyzm' class="{{yzmswitch?'':'yzmswitch'}}">{{yzm}}</button>
+    </view>
+    <view class='newkey newkey1 flexl'>
+      <input name='password' placeholder='请输入新密码' placeholder-class='placeclass' maxlength='32' bindinput='passwordtap' type='password'></input>
+      <view class='passwordtip' wx:if='{{passwordtipshow}}'>*密码中不能包含汉字</view>
+    </view>
+    <view class='newkey flexl'>
+      <input name='passwordag' placeholder='请再次输入新密码' placeholder-class='placeclass' maxlength='32' bindinput='passwordtapag' bindblur='passwordagblur' type='password'></input>
+      <view>
+        <view class='passwordtip' wx:if='{{passwordtipshowchina}}'>*密码中不能包含汉字</view>
+        <view class='passwordtip' wx:if='{{passwordtipagshow}}'>*两次输入的密码不一样</view>
+      </view>  
+    </view>
+    <button class='sure' form-type='submit' hover-class='none'>确定</button>
+  </form>
+</view>

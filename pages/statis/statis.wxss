@@ -1,0 +1,4 @@
+/* pages/statis/statis.wxss */
+.tunnelimg{width: 40rpx;margin-right: 10rpx;}
+.tunnelitem{padding: 15rpx 0;border-bottom: 1rpx solid #eee;margin: 0 30rpx;}
+.tunneltxt{font-size: 32rpx;}

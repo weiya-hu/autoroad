@@ -1,0 +1,33 @@
+<!--pages/message/messagedet/messsagedet.wxml-->
+<view>
+  <view class='title'>{{item.titile}}</view>
+  <view class='flex messagexx'>
+    <view>发布人：{{item.sender}}</view>
+    <view class='time'>{{item.sendTime}}</view>
+  </view>
+  <view class='content'>{{item.msgContent}}</view>
+  <view class="imgpre">
+    <view wx:for='{{image}}' wx:key='index' class='messageimg fleximg' style='height:{{height}}px' bindtap='previewimg' data-item='{{item}}'>
+      <image mode='aspectFit' src='{{item}}'bindload="imageLoad" data-idx='{{index}}' class="{{imgstyle[index]?'width':'height'}} "></image>
+    </view>
+  </view>
+  <view wx:if='{{item.address}}' class='address'>发布地点：{{item.address}}</view>
+  <view class='messagetype1'>
+    <view wx:if='{{item.msgCategory==3}}' class='messagetype'>
+      <image class='messagetypeimg fleximg' mode='widthFix' src='../../../images/blue.png'></image>
+      <view class='messagetypetxt'>信息上报</view>
+    </view>
+    <view wx:if='{{item.msgCategory==1}}' class='messagetype'>
+      <image class='messagetypeimg fleximg' mode='widthFix' src='../../../images/pink.png'></image>
+      <view class='messagetypetxt'>通知公告</view>
+    </view>
+    <view wx:if='{{item.msgCategory==2}}' class='messagetype'>
+      <image class='messagetypeimg fleximg' mode='widthFix' src='../../../images/orange.png'></image>
+      <view class='messagetypetxt'>系统消息</view>
+    </view>
+  </view>
+  <view class='date' wx:if='{{item.msgCategory==1}}'>
+    <view wx:if='{{item.startTime}}'>开始时间：{{item.startTime}}</view>
+    <view wx:if='{{item.endTime}}'>结束时间：{{item.endTime}}</view>
+  </view>
+</view>

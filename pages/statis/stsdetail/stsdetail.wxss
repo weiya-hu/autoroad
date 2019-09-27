@@ -1,0 +1,28 @@
+/* pages/statis/stsdetail/stsdetail.wxss */
+.nav{position: fixed;top: 0;left: 0;width: 100%;text-align: center;z-index: 300;display: flex;  
+  justify-content:space-around;align-items: center;padding: 30rpx 0;background: #ffffff;
+  box-shadow: 0px 1px 6px rgba(0, 0, 0, 0.1)}
+.navitem{background: #7cb5ec;color: #ffffff;font-size: 30rpx;border-radius: 8rpx;line-height: 80rpx;
+  padding: 0 24rpx;}
+.nav .navitemactive{background: #EE5E7B}
+.content{margin-top: 150rpx;}
+.title{padding: 10rpx 20rpx;font-size: 30rpx;font-weight: bold;flex: 1}
+.ringitem{border-bottom: 1px solid #eee;display: flex;justify-content: left;align-content: flex-start;
+  position: relative}
+canvas{height: 200px;flex: 4;text-align: center;}
+.online{width: 20rpx;height: 10rpx;background: #F7A35C;}
+.unline{width: 20rpx;height: 10rpx;background: #7CB5EC;}
+.linetxt{font-size: 24rpx;}
+.explain{position: absolute;top: 10rpx;background: rgba(0, 0, 0, 0.1);padding: 10rpx;border-radius: 4rpx;}
+.explain cover-view{margin-right: 6rpx;}
+.direct{position: absolute;right: 10rpx;top: 10rpx;font-size: 26rpx;
+  border: 1px solid #eee;border-radius: 4px;padding: 10rpx 20rpx;}
+.lucky-index-img{text-align: center;}
+/* canvas生成的图片右移了一部分，尽量和原canvas重合 */
+.canvasimg{width: 68%;height:200px;display: flex;justify-content: center;align-items: flex-start;position: relative;right:80rpx;}
+.lucky-index-round{position: fixed;top: 9999rpx;left: 0;width: 188rpx;height: 188rpx;}
+.nodataa{position: relative;top:500rpx;margin: 0 auto;}
+.nodataimg{width: 300rpx;position: relative;top: -60rpx;}
+.nodatatxt{font-size: 24rpx;color:#37A2DA;text-align: center;margin-top: -40rpx; }
+
+

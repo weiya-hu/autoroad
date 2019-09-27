@@ -1,0 +1,11 @@
+<!--components/pickerYMDHM/pickerYMDHM.wxml-->
+<view>
+  <picker disabled="{{disabled}}" mode="multiSelector" bindchange="pickerChange" bindcolumnchange="pickerColumnChange" bindcancel ="pickerCancel" value="{{pickerIndex}}" range="{{pickerArray}}" range-key="{{'name'}}" class='date flex'>
+    <view style='color:#666;font-size:26rpx;padding-left:20rpx;'>
+      {{dateString}}
+    </view>
+    <view class="dateimg fleximg">
+      <image mode='widthFix' src='../images/date.png'></image>
+    </view>
+  </picker>
+</view>

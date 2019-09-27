@@ -1,0 +1,24 @@
+/* pages/video/videoproject/videoproject.wxss */
+.scroll_box{width: 100%;height: 100rpx;overflow: hidden;padding:0 20rpx;background: #fff;
+  white-space: nowrap;background: #fff;border-bottom: 1px solid #008aff;}
+.address{width: 33.3%; font-size: 30rpx;display: inline-block;height:100rpx; line-height: 100rpx;text-align: center;
+  border-top: 6rpx solid rgba(0, 0, 0, 0);border-bottom: 6rpx solid rgba(0, 0, 0, 0);box-sizing: border-box;
+  background: #ffffff}
+.active{color: #008aff;border-bottom: 6rpx solid #008aff;}
+.nav {height: 100rpx;width: 100%;box-sizing: border-box;overflow: hidden;line-height: 100rpx;background: #ffffff;
+  font-size: 16px;white-space: nowrap;position: fixed;top: 0;left: 0;z-index: 99;border-bottom: 1px solid #008aff;}
+.tab-box{padding-top: 100rpx;height: 100%;box-sizing: border-box;}
+.tab-content{overflow-y: scroll;display: flex;flex-wrap:wrap;justify-content:flex-start;align-content: flex-start}
+.videoitem {width:39%;height: 246rpx;margin: 30rpx 5%;}
+.videoimg{width: 100%;height: 166rpx;overflow: hidden;position: relative;}
+.opacity{width: 100%;height: 100%;background: rgba(0, 0, 0, 0.2);position: absolute;top: 0;left: 0;}
+.playimg{position: absolute;width: 100rpx;z-index: 2;top: 50%;left: 50%;transform: translateX(-50%) translateY(-50%);}
+.name{font-size: 28rpx;line-height: 40rpx;width: 100%;text-align: center;overflow : hidden;
+text-overflow: ellipsis;display: -webkit-box;-webkit-line-clamp: 2;-webkit-box-orient: vertical;}
+.namepre{height: 100rpx;}
+.namepre .namegray{color: #999;font-size: 28rpx;line-height: 40rpx;width: 100%;text-align: center;overflow : hidden;
+text-overflow: ellipsis;display: -webkit-box;-webkit-line-clamp: 2;-webkit-box-orient: vertical;}
+.nodataa{position: absolute;top: 50%; left: 50%;transform: translateX(-50%) translateY(-50%);z-index: 99999;width: 100%;
+  height: 100%;background: #f1f3f5;}
+.nodataimg{width: 300rpx;position: relative;top: -60rpx;}
+.nodatatxt{font-size: 24rpx;color:#37A2DA;text-align: center;margin-top: -40rpx; }

@@ -1,0 +1,22 @@
+var filters = {
+  imgurl: function (val) {
+    return 'https://kaijin.zhoumc.cn/jeecg-boot/sys/common/view/' + val
+  },
+  ischecked:function(val,checkeditem){
+    let flg = false,i = 0;
+    for (length = checkeditem.length; i < length ;i++){
+      if (val == checkeditem[i].id){
+        flg = true
+      }
+    }
+    if(flg){
+      return true
+    }else{
+      return false
+    }
+  }
+}
+module.exports = {
+  imgurl: filters.imgurl,
+  ischecked: filters.ischecked
+}

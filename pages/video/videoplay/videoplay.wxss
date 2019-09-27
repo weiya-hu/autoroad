@@ -1,0 +1,62 @@
+/* pages/video/videoplay/videoplay.wxss */
+.vd{width: 100%;height: 600rpx;}
+.title{height: 140rpx;padding: 0 30rpx;}
+.title>view{color: #3d4955;font-size: 38rpx;overflow : hidden;text-align: justify;text-overflow: ellipsis;
+  display: -webkit-box;-webkit-line-clamp: 2;-webkit-box-orient: vertical;}
+.rele{
+  height: 100rpx;
+  padding: 0 30rpx;
+  color: #3d4955;
+  font-size:32rpx;
+  line-height: 100rpx; 
+  border-top: 1px solid #eeeeee;
+}
+.releitem{
+  height: 144rpx;
+  padding-bottom: 20rpx;
+  background: #ffffff;
+  padding: 0 30rpx 20rpx;
+  display: flex;
+  justify-content: flex-start;
+  align-items:stretch;
+}
+
+.itemleft{
+  width:254rpx;
+  height: 144rpx;
+  overflow: hidden;
+  position: relative;
+  margin-right: 20rpx;
+}
+.itemright{
+  width: 400rpx;
+  height: 100%;
+  display: flex;
+  flex-direction: column;
+  align-content: space-between;
+  position: relative;
+}
+.itemimg{
+  width: 254rpx;
+  overflow: hidden
+}
+.itemleft>view{
+  color: #ffffff;
+  font-size: 24rpx;
+  position: absolute;
+  right:10rpx;
+  bottom: 10rpx;
+}
+.itemtitle{
+  color: #3d4955;
+  font-size: 30rpx;
+  text-align:left;
+  overflow : hidden;
+  text-overflow: ellipsis;
+  display: -webkit-box;
+  -webkit-line-clamp: 2;
+  -webkit-box-orient: vertical;
+}
+.con .color{
+  color: #3c7deb;
+}

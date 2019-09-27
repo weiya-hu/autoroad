@@ -1,0 +1,88 @@
+<!--index.wxml-->
+<view class="container" style='height:{{height}}px'>
+  <view class='up'>
+    <view class='fleximg upimg'>
+      <image mode='widthFix' src='../../images/home.png'></image>
+    </view>
+    <swiper wx:if='{{messagelist.anntMsgTotal+messagelist.repairMsgTotal+messagelist.sysMsgTotal>0}}' class='tz flexl' autoplay="true" interval="3000" duration="800" vertical='true' circular='true'>
+      <block wx:for="{{messagelist.anntMsgList}}"  wx:key="{{index}}">
+        <swiper-item class='flexl'>
+          <view class='flexl'>
+            <view class='fleximg tzimgyellow'>
+              <image mode='widthFix' src='../../images/tzyellow.png'></image>
+            </view>
+            <view class='tztxt'>{{item.titile}}</view>
+          </view>
+        </swiper-item>
+      </block>
+      <block wx:for="{{messagelist.repairMsgList}}"  wx:key="{{index}}">
+        <swiper-item class='flexl'>
+          <view class='flexl'>
+            <view class='fleximg tzimgblue'>
+              <image mode='widthFix' src='../../images/tzblue.png'></image>
+            </view>
+            <view class='tztxt'>{{item.titile}}</view>
+          </view>
+        </swiper-item>
+      </block>
+      <block wx:for="{{messagelist.sysMsgList}}"  wx:key="{{index}}">
+        <swiper-item class='flexl'>
+          <view class='flexl'>
+            <view class='fleximg tzimgpink'>
+              <image mode='widthFix' src='../../images/tzpink.png'></image>
+            </view>
+            <view class='tztxt'>{{item.titile}}</view>
+          </view>
+        </swiper-item>
+      </block>
+    </swiper>
+    <!-- <view class='flexcc worker'>
+      <view class='fleximg workerbackg'>
+        <view wx:if='{{userimg}}' class='fleximg workerrealimg'>
+          <image mode='widthFix' src='{{userimg}}'></image>
+        </view>
+        <view wx:else='{{userimg}}' class='fleximg workerimg'>
+          <image mode='widthFix' src='../../images/worker2.png'></image>
+        </view>
+                             
+      </view>
+      <view class='workertxt'>{{username}}</view>
+    </view> -->
+  </view>
+  <view class='flex'>
+    <view class='video flexcc' style='height:{{width/3}}px' bindtap='toproject' data-tit='video'>
+      <view class='fleximg videoimg'><image mode='widthFix' src='../../images/video.png'></image></view>
+      <view class='videotxt'>视频监控</view>
+    </view>
+    <view class='video flexcc' style='height:{{width/3}}px' bindtap='toproject' data-tit='person'>
+      <view class='fleximg videoimg manimg'><image mode='widthFix' src='../../images/worker2.png'></image></view>
+      <view class='videotxt'>人员管理</view>
+    </view>
+    <view class='video flexcc' style='height:{{width/3}}px'  bindtap='toproject' data-tit='safe'>
+      <view class='fleximg videoimg safeimg'><image mode='widthFix' src='../../images/safe.png'></image></view>
+      <view class='videotxt'>安全步距</view>
+    </view>      
+  </view>
+  <view class='flex'>
+    <view class='video flexcc' style='height:{{width/3}}px'  bindtap='toproject' data-tit='gas'>
+      <view class='fleximg videoimg gasimg'><image mode='widthFix' src='../../images/gas.png'></image></view>
+      <view class='videotxt'>有害气体</view>
+    </view>
+    <view class='video flexcc' style='height:{{width/3}}px'  bindtap='toproject' data-tit='envir'>
+      <view class='fleximg videoimg envirimg'><image mode='widthFix' src='../../images/envir.png'></image></view>
+      <view class='videotxt'>环境监测</view>
+    </view>
+    <view class='video flexcc' style='height:{{width/3}}px'  bindtap='toproject' data-tit='messageto'>
+      <view class='fleximg videoimg messagetoimg'><image mode='widthFix' src='../../images/messageto1.png'></image></view>
+      <view class='videotxt'>信息上报</view>
+    </view> 
+  </view>
+  <view>
+    <view class='video flexcc tji' style='height:{{width/3}}px'  bindtap='tostatis'>
+      <view class='fleximg videoimg tjiimg'><image mode='widthFix' src='../../images/tji.png'></image></view>
+      <view class='videotxt'>统计分析</view>
+    </view> 
+  </view>
+</view>
+<!-- <web-view src='https://kaijin.zhoumc.cn/'></web-view> -->
+
