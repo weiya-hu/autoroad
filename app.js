@@ -7,7 +7,7 @@ App({
     //返回一个Promise对象
     return new Promise(function (resolve, reject) {
       wx.request({
-        url: "https://kaijin.zhoumc.cn/" + url,
+        url: "https://chengkai.zhoumc.cn/" + url,
         // url: "http://192.168.100.135:8080/" + url,
         method:method,
         data: data,
@@ -79,7 +79,7 @@ App({
     //返回一个Promise对象
     return new Promise(function (resolve, reject) {
       wx.request({
-        url: "https://kaijin.zhoumc.cn/" + url,
+        url: "https://chengkai.zhoumc.cn/" + url,
         // url: "http://192.168.100.135:8080/" + url,
         method: method,
         data: data,
@@ -142,7 +142,7 @@ App({
     //返回一个Promise对象
     return new Promise(function (resolve, reject) {
       wx.request({
-        url: "https://kaijin.zhoumc.cn/" + url,
+        url: "https://chengkai.zhoumc.cn/" + url,
         // url: "http://192.168.100.135:8080/" + url,
         method: "post",
         data: data,
@@ -188,8 +188,8 @@ App({
     userinfo:'',//用户信息
     departs:[],//用户部门
     roles:[],//岗位
-    master:'https://kaijin.zhoumc.cn/jeecg-boot/sys/common/view/',
-    url:'https://kaijin.zhoumc.cn/',
+    master:'https://chengkai.zhoumc.cn/jeecg-boot/sys/common/view/',
+    url:'https://chengkai.zhoumc.cn/',
     // master: 'http://192.168.100.135:8080/jeecg-boot/sys/common/view/',
     // url: 'http://192.168.100.135:8080/',
     userimg:'',//用户头像

@@ -41,27 +41,9 @@ Page({
       }
     }];
     console.log(idx, name, unit, max, min)
+    console.log(JSON.stringify(series))
     console.log(data)
     let u='',m='',mi='';
-    // if (unit =='℃'){
-    //   u ='℃';
-    //   m=50;
-    // } else if (unit == 'RH'){
-    //   u = 'RH';
-    //   m = 90;
-    // } else if (unit == 'M/S') {
-    //   u = 'M/S';
-    //   m = 8;
-    // } else if (unit == 'PPM') {
-    //   u = 'PPM';
-    //   m = 150;
-    // } else if (unit == 'dB') {
-    //   u = 'dB';
-    //   m = 140;
-    // } else if (unit == 'dB') {
-    //   u = 'dB';
-    //   m = 140;
-    // }
     if (name == '温度') {
       u = '℃';
       m = 50;
@@ -69,7 +51,6 @@ Page({
       u = 'RH';
       m = 90;
     } else if (name == '风速(m/s)' || name == '风速') {
-      // debugger;
       u = 'M/S';
       m = 8;
     } else if (name == '粉尘') {
@@ -80,18 +61,22 @@ Page({
       m = 140;
     } else if (name == 'PM10') {
       u = 'ug/m';
-      m = 120;
+      m = 200;
     } else if (name == 'TSP') {
       u = '';
       m = 140;
     } else if (name == '风力') {
       u = '级';
-      m=8
+      m=8;
     } else if (name == '风向') {
       u = '';
+      m = 8;
     }else if (name == '气压') {
       u = 'Kpa';
       m = 101;
+    } else if (name == 'PM2.5') {
+      u = 'ug/m';
+      m = 200;
     }else{
       console.log('777777777777777777777777')
       u='';
@@ -394,13 +379,6 @@ Page({
         // lineChart.opts.series[0].data = valuelist
         // that.updateData(valuelist)
         that.updateData(valuelist, that.data.currentTab, that.data.name, that.data.item.unit, res.data.result.max, res.data.result.min)
-
-
-        
-        
-        // lineChart1.updateData({
-        //   series: series
-        // });
         let flg = valuelist.find(m => m != null)
         console.log(flg)
         if (flg) {
